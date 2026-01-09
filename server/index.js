@@ -9,6 +9,11 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+// Test Route
+app.get('/', (req, res) => {
+  res.send('✅ Luxe Salon API is Live & Running!');
+});
+
 // --- Database Connection ---
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("✅ Connected to MongoDB Atlas"))

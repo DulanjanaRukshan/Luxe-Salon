@@ -16,7 +16,7 @@ const Footer = () => {
     setStatus('loading');
 
     try {
-      const response = await fetch('https://luxe-salon-backend-mxz9.onrender.com', {
+      const response = await fetch('https://luxe-salon-backend.onrender.com', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email }),

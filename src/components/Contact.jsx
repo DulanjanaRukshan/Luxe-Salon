@@ -27,7 +27,7 @@ const Contact = () => {
 
     try {
       // Connect to your Node.js Backend
-      const response = await fetch('https://luxe-salon-backend-mxz9.onrender.com', {
+      const response = await fetch('https://luxe-salon-backend.onrender.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
