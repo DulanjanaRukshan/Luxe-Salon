@@ -26,11 +26,11 @@ const FAQ = () => {
   const tabs = ['General', 'Services', 'Policies'];
 
   return (
-    <section id="faq" className="py-24 bg-white">
+    <section id="faq" className="pt-24 pb-12 bg-white">
       <div className="container mx-auto px-6">
-        
+
         <div className="flex flex-col lg:flex-row gap-16">
-          
+
           {/* Left Side: Content */}
           <div className="lg:w-1/2">
             <div className="mb-10">
@@ -45,8 +45,8 @@ const FAQ = () => {
                   key={tab}
                   onClick={() => { setActiveTab(tab); setActiveIndex(null); }}
                   className={`px-6 py-2 rounded-full text-sm font-bold transition-all duration-300 border
-                    ${activeTab === tab 
-                      ? 'bg-dark text-white border-dark' 
+                    ${activeTab === tab
+                      ? 'bg-dark text-white border-dark'
                       : 'bg-white text-gray-500 border-gray-200 hover:border-gold hover:text-gold'
                     }`}
                 >
@@ -56,7 +56,7 @@ const FAQ = () => {
             </div>
 
             {/* Accordion Questions */}
-            <div className="space-y-4 min-h-[400px]">
+            <div className="space-y-4">
               <AnimatePresence mode='wait'>
                 <motion.div
                   key={activeTab}
@@ -67,7 +67,7 @@ const FAQ = () => {
                 >
                   {faqData[activeTab].map((item, index) => (
                     <div key={index} className="border-b border-gray-100 last:border-0 mb-4">
-                      <button 
+                      <button
                         onClick={() => setActiveIndex(activeIndex === index ? null : index)}
                         className="w-full flex justify-between items-center py-4 text-left focus:outline-none group"
                       >
@@ -78,10 +78,10 @@ const FAQ = () => {
                           {activeIndex === index ? <Minus size={16} /> : <Plus size={16} />}
                         </div>
                       </button>
-                      
+
                       <AnimatePresence>
                         {activeIndex === index && (
-                          <motion.div 
+                          <motion.div
                             initial={{ height: 0, opacity: 0 }}
                             animate={{ height: "auto", opacity: 1 }}
                             exit={{ height: 0, opacity: 0 }}
@@ -100,7 +100,7 @@ const FAQ = () => {
             </div>
 
             {/* CTA Box */}
-            <div className="mt-10 bg-gray-50 p-6 rounded-2xl flex items-center gap-4 border border-gray-100">
+            <div className="mt-6 bg-gray-50 p-6 rounded-2xl flex items-center gap-4 border border-gray-100">
               <div className="bg-white p-3 rounded-full shadow-sm text-gold">
                 <HelpCircle size={24} />
               </div>
@@ -116,9 +116,9 @@ const FAQ = () => {
           <div className="lg:w-1/2 hidden lg:block relative">
             <div className="sticky top-32">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-                <img 
-                  src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&q=80&w=800" 
-                  alt="Salon Support" 
+                <img
+                  src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&q=80&w=800"
+                  alt="Salon Support"
                   className="w-full h-[600px] object-cover"
                 />
                 {/* Overlay Content */}
@@ -132,7 +132,7 @@ const FAQ = () => {
                   </div>
                 </div>
               </div>
-              
+
               {/* Decorative Circle */}
               <div className="absolute -top-10 -right-10 w-32 h-32 bg-gold/20 rounded-full blur-2xl -z-10" />
             </div>

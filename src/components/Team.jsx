@@ -38,9 +38,9 @@ const Team = () => {
           <h2 className="text-4xl font-serif font-bold text-dark mt-2">Meet Our Stylists</h2>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {team.map((member, index) => (
-            <motion.div 
+            <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -48,11 +48,11 @@ const Team = () => {
               className="group relative overflow-hidden rounded-xl"
             >
               {/* Image */}
-              <div className="h-96 w-full overflow-hidden">
-                <img 
-                  src={member.img} 
-                  alt={member.name} 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 grayscale group-hover:grayscale-0" 
+              <div className="h-80 md:h-96 w-full overflow-hidden">
+                <img
+                  src={member.img}
+                  alt={member.name}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 grayscale group-hover:grayscale-0"
                 />
               </div>
 
@@ -61,7 +61,7 @@ const Team = () => {
                 <h3 className="text-white text-xl font-bold">{member.name}</h3>
                 <p className="text-gold text-sm font-medium mb-2">{member.role}</p>
                 <p className="text-gray-300 text-xs mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Specialist in {member.specialty}</p>
-                
+
                 <div className="flex gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
                   <Instagram className="text-white w-5 h-5 hover:text-gold cursor-pointer" />
                   <Twitter className="text-white w-5 h-5 hover:text-gold cursor-pointer" />

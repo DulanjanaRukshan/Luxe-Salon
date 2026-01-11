@@ -41,10 +41,10 @@ const Footer = () => {
 
   return (
     <footer className="bg-black text-gray-300 relative border-t border-gray-900">
-      
+
       {/* Back to Top Button */}
       <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-        <button 
+        <button
           onClick={scrollToTop}
           className="bg-gold text-white p-3 rounded-full shadow-lg hover:bg-white hover:text-gold transition-all duration-300 group"
         >
@@ -52,9 +52,9 @@ const Footer = () => {
         </button>
       </div>
 
-      <div className="container mx-auto px-6 pt-20 pb-10">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-          
+      <div className="container mx-auto px-6 pt-16 md:pt-20 pb-10">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-12 md:mb-16">
+
           {/* Column 1: Brand Info */}
           <div className="space-y-6">
             <div className="flex items-center gap-2 text-2xl font-serif font-bold text-white">
@@ -92,7 +92,7 @@ const Footer = () => {
             <ul className="space-y-4 text-sm">
               <li className="flex items-start gap-3">
                 <MapPin size={18} className="text-gold mt-1 min-w-[18px]" />
-                <span>123 Luxury Avenue, Suite 100<br/>Beverly Hills, CA 90210</span>
+                <span>123 Luxury Avenue, Suite 100<br />Beverly Hills, CA 90210</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={18} className="text-gold min-w-[18px]" />
@@ -109,17 +109,17 @@ const Footer = () => {
           <div>
             <h4 className="text-white font-bold text-lg mb-6">Newsletter</h4>
             <p className="text-gray-400 text-sm mb-4">Subscribe for latest trends and exclusive offers.</p>
-            
+
             <form onSubmit={handleSubscribe} className="flex flex-col gap-3">
-              <input 
-                type="email" 
+              <input
+                type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="Your Email Address" 
+                placeholder="Your Email Address"
                 required
                 className="bg-gray-900 text-white px-4 py-3 rounded-lg border border-gray-800 focus:border-gold outline-none transition-colors text-sm"
               />
-              <button 
+              <button
                 type="submit"
                 disabled={status === 'loading' || status === 'success'}
                 className={`text-dark font-bold py-3 rounded-lg transition-all text-sm flex justify-center items-center gap-2

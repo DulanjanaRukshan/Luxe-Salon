@@ -2,11 +2,10 @@
 
 A full-stack modern salon website featuring a luxury design, appointment booking system, and newsletter subscription. Built with the **MERN Stack** (MongoDB, Express, React, Node.js).
 
-![Project Preview](https://images.unsplash.com/photo-1560066984-12186d30b7e7?auto=format&fit=crop&q=80&w=1200)
 
 ## 🚀 Live Demo
-- **Frontend:** [Link to your Vercel App](https://your-app.vercel.app)
-- **Backend:** [Link to your Render API](https://your-app.onrender.com)
+- **Frontend:** [Link to your Vercel App](https://luxe-salon-omega.vercel.app/)
+- **Backend:** [Link to your Render API](https://luxe-salon-backend.onrender.com)
 
 ---
 

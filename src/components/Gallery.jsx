@@ -17,26 +17,26 @@ const Gallery = () => {
   const [filter, setFilter] = useState('All');
   const [selectedImg, setSelectedImg] = useState(null);
 
-  const filteredImages = filter === 'All' 
-    ? galleryImages 
+  const filteredImages = filter === 'All'
+    ? galleryImages
     : galleryImages.filter(img => img.category === filter);
 
   const categories = ['All', 'Hair Cuts', 'Color', 'Interior'];
 
   return (
-    <section id="gallery" className="py-24 bg-white">
+    <section id="gallery" className="pt-12 pb-24 bg-white">
       <div className="container mx-auto px-6">
-        
+
         {/* Header */}
         <div className="text-center mb-16">
-          <motion.span 
+          <motion.span
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             className="text-gold font-bold tracking-widest uppercase text-sm"
           >
             Portfolio
           </motion.span>
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-5xl font-serif font-bold text-dark mt-2"
@@ -57,9 +57,9 @@ const Gallery = () => {
             >
               {cat}
               {filter === cat && (
-                <motion.div 
-                  layoutId="underline" 
-                  className="absolute -bottom-2 left-0 w-full h-0.5 bg-gold" 
+                <motion.div
+                  layoutId="underline"
+                  className="absolute -bottom-2 left-0 w-full h-0.5 bg-gold"
                 />
               )}
             </button>
@@ -80,12 +80,12 @@ const Gallery = () => {
                 className="relative group cursor-pointer overflow-hidden rounded-xl h-64 md:h-80"
                 onClick={() => setSelectedImg(img.src)}
               >
-                <img 
-                  src={img.src} 
-                  alt={img.category} 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+                <img
+                  src={img.src}
+                  alt={img.category}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                
+
                 {/* Hover Overlay */}
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                   <div className="bg-white/20 backdrop-blur-sm p-3 rounded-full text-white">
@@ -101,21 +101,21 @@ const Gallery = () => {
       {/* Lightbox Modal (Full Screen View) */}
       <AnimatePresence>
         {selectedImg && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4"
             onClick={() => setSelectedImg(null)}
           >
-            <button className="absolute top-6 right-6 text-white hover:text-gold">
-              <X size={40} />
+            <button className="absolute top-4 right-4 md:top-6 md:right-6 text-white hover:text-gold z-[60] p-2 bg-black/20 rounded-full">
+              <X size={32} />
             </button>
-            <motion.img 
+            <motion.img
               initial={{ scale: 0.5 }}
               animate={{ scale: 1 }}
-              src={selectedImg} 
-              alt="Full screen" 
+              src={selectedImg}
+              alt="Full screen"
               className="max-h-[90vh] max-w-[95vw] rounded-lg shadow-2xl border-4 border-dark"
               onClick={(e) => e.stopPropagation()} // Prevent closing when clicking the image itself
             />

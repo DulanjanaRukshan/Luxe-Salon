@@ -11,19 +11,19 @@ const brands = [
 
 const Brands = () => {
   return (
-    <section className="py-12 bg-white border-b border-gray-100">
+    <section className="py-12 bg-gray-50 border-b border-gray-100">
       <div className="container mx-auto px-6">
         <p className="text-center text-gray-400 text-xs font-bold tracking-[0.3em] uppercase mb-10">
           Trusted by Premium Brands
         </p>
-        
+
         {/* Logo Grid */}
         <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20">
           {brands.map((brand, index) => (
             <div key={index} className="group cursor-pointer">
-              <img 
-                src={brand.url} 
-                alt={brand.name} 
+              <img
+                src={brand.url}
+                alt={brand.name}
                 className="h-8 md:h-12 w-auto object-contain grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 transform group-hover:scale-110"
               />
             </div>
